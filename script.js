@@ -195,6 +195,7 @@ let corte1 = etiquetaAtual.corte1;
 let corte2 = etiquetaAtual.corte2;
 let pos1 = etiquetaAtual.pos1;
 let pos2 = etiquetaAtual.pos2;
+criarChuvaDeLogos("Buslog");
 // ================================
 
 input1.addEventListener("change", carregarImagem1);
@@ -416,13 +417,43 @@ botao.addEventListener("click", () => {
 
 function trocarEtiqueta(){
 
-    etiquetaAtual = etiquetas[document.getElementById("etiqueta").value];
+    const modelo = document.getElementById("etiqueta").value;
+
+    etiquetaAtual = etiquetas[modelo];
 
     corte1 = etiquetaAtual.corte1;
     corte2 = etiquetaAtual.corte2;
     pos1 = etiquetaAtual.pos1;
     pos2 = etiquetaAtual.pos2;
 
-    atualizarCanvas();
+    criarChuvaDeLogos(modelo);
 
+    atualizarCanvas();
+}
+
+function criarChuvaDeLogos(modelo) {
+
+    const container = document.getElementById("chuva-logos");
+
+    container.innerHTML = "";
+
+    const quantidade = 25;
+
+    for (let i = 0; i < quantidade; i++) {
+
+        const logo = document.createElement("img");
+
+        logo.src = `Img/${modelo}.png`;
+        logo.className = "logo-caindo";
+
+        logo.style.left = `${Math.random() * 100}%`;
+
+        logo.style.width = `${40 + Math.random() * 60}px`;
+
+        logo.style.animationDuration = `${5 + Math.random() * 7}s`;
+
+        logo.style.animationDelay = `${Math.random() * 8}s`;
+
+        container.appendChild(logo);
+    }
 }

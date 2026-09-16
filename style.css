@@ -68,3 +68,39 @@ button:disabled{
     background:#999;
     cursor:not-allowed;
 }
+
+/* ================================
+   CHUVA DE LOGOS
+   ================================ */
+
+#chuva-logos {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.logo-caindo {
+    position: absolute;
+    top: -100px;
+    width: 70px;
+    height: auto;
+    opacity: 0.50;
+    animation: cairLogo linear infinite;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes cairLogo {
+    from {
+        transform: translateY(-120px) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(calc(100vh + 150px)) rotate(360deg);
+    }
+}
