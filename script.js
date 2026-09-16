@@ -27,7 +27,7 @@ const etiquetas = {
 
 corte1: {
     esquerda: 33 + 3,
-    cima: 23,
+    cima: 32,
     direita: 860 + 68,
     baixo: 1325
 },
