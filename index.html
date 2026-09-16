@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Impressão</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Gerador de Impressão</h1>
+
+<div class="campo">
+
+    <label>Modelo da etiqueta</label>
+
+    <select id="etiqueta" onchange="trocarEtiqueta()">
+
+        <option value="Buslog">Buslog</option>
+        <option value="Jad">Jadlog</option>
+        <option value="ML">Mercado Livre</option>
+        <option value="Optimus">Optimus</option>
+        <option value="Shoppe">Shoppe</option>
+
+    </select>
+
+</div>
+
+        <div class="campo">
+            <label>ETIQUETA-IMAGEM</label>
+            <input type="file" id="img1" accept="application/pdf">
+        </div>
+
+        <div class="campo">
+            <label>DANFE-IMAGEM</label>
+            <input type="file" id="img2" accept="application/pdf">
+        </div>
+
+
+        <canvas id="canvas"></canvas>
+
+        <button id="baixar" disabled>Baixar PDF</button>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
